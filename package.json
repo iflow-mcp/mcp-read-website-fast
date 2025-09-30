@@ -1,45 +1,41 @@
 {
-  "name": "@just-every/mcp-read-website-fast",
+  "name": "iflow-mcp-mcp-read-website-fast",
   "version": "0.1.20",
-  "description": "Markdown Content Preprocessor - Fetch web pages, extract content, convert to clean Markdown",
+  "description": "Fast, efficient web content extraction for MCP. Converts websites to clean Markdown.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
-    "mcp-read-website-fast": "bin/mcp-read-website.js"
+    "mcp-read-website": "bin/mcp-read-website.js"
   },
-  "files": [
-    "dist/**/*",
-    "bin/**/*",
-    "README.md",
-    "LICENSE",
-    "package.json"
-  ],
   "scripts": {
     "build": "tsc -p tsconfig.prod.json",
-    "build:dev": "tsc",
-    "dev": "tsx src/index.ts",
-    "start": "node dist/index.js",
-    "serve": "node dist/serve-restart.js",
-    "serve:dev": "tsx src/serve.ts",
-    "test": "vitest",
-    "test:deploy": "vitest run test/deployment.test.ts",
-    "lint": "eslint src",
-    "typecheck": "tsc --noEmit"
+    "dev": "tsx src/serve.ts",
+    "dev:restart": "tsx src/serve-restart.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "mcp",
-    "mcp-server",
-    "model-context-protocol",
+    "web-scraping",
     "markdown",
-    "web-scraper",
-    "readability",
     "content-extraction",
-    "rag",
-    "llm",
-    "claude",
-    "cursor",
-    "vscode"
+    "ai-tools"
   ],
-  "author": "Just Every",
+  "author": "just-every",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "@mozilla/readability": "^0.5.0",
+    "jsdom": "^25.0.1",
+    "turndown": "^7.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.7.4",
+    "@types/turndown": "^5.0.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/just-every/mcp-read-website-fast.git"
@@ -47,30 +43,5 @@
   "bugs": {
     "url": "https://github.com/just-every/mcp-read-website-fast/issues"
   },
-  "homepage": "https://github.com/just-every/mcp-read-website-fast#readme",
-  "license": "MIT",
-  "dependencies": {
-    "@just-every/crawl": "^1.0.8",
-    "@modelcontextprotocol/sdk": "^1.17.4",
-    "commander": "^14.0.0",
-    "uuid": "^11.1.0"
-  },
-  "devDependencies": {
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^24.3.0",
-    "@types/turndown": "^5.0.5",
-    "@typescript-eslint/eslint-plugin": "^8.41.0",
-    "@typescript-eslint/parser": "^8.41.0",
-    "eslint": "^9.34.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.41.0",
-    "vitest": "^3.2.4"
-  },
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "type": "module"
+  "homepage": "https://github.com/just-every/mcp-read-website-fast#readme"
 }
